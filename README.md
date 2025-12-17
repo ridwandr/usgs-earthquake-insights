@@ -17,12 +17,15 @@ The goal is to communicate useful findings from the earthquake dataset in a clea
 ```
 earthquake-data-analysis/
 ├── etl/                      # Scripts for extraction and preprocessing
-│   └── etl_main.py
+│   ├── etl_main.py
+│   ├── load.py
+│   └── transform.py
 ├── notebook/                 # Jupyter notebooks for analysis
-│   └── run.ipynb
+│   └── lm_etlProject.ipynb
 ├── .gitignore
 ├── README.md
-└── requirements.txt
+├── etl_main.py
+└── run.ipynb
 ```
 
 ## Data Source
@@ -30,36 +33,32 @@ earthquake-data-analysis/
 The dataset used in this project is sourced from public earthquake records such as the USGS Earthquake Catalog — a widely available dataset of global earthquake events.
 
 Typical fields include:
-
-* time — event date and time
-* latitude, longitude — geographical coordinates
-* magnitude — earthquake magnitude
-* depth — depth of the event
+- time — event date and time
+- latitude, longitude — geographical coordinates
+- magnitude — earthquake magnitude
+- depth — depth of the event
 
 ## ETL and Data Processing
 
 The `etl/etl_main.py` script is designed to:
-
 1. Load raw earthquake data
 2. Clean and preprocess the dataset
 3. Output a structured format ready for analysis
 
 Common processing steps include:
-
-* Parsing timestamps into datetime format
-* Handling missing or inconsistent values
-* Filtering by magnitude thresholds
+- Parsing timestamps into datetime format
+- Handling missing or inconsistent values
+- Filtering by magnitude thresholds
 
 You can customize data filters in the script to focus on different event subsets.
 
 ## Exploratory Analysis
 
 The `notebook/run.ipynb` notebook contains:
-
-* Summary statistics of earthquake occurrences
-* Distribution of magnitudes
-* Time-series patterns across years and months
-* Geographic heatmaps or scatterplots
+- Summary statistics of earthquake occurrences
+- Distribution of magnitudes
+- Time-series patterns across years and months
+- Geographic heatmaps or scatterplots
 
 Use this notebook to interactively explore different aspects of the data and generate visual insights.
 
@@ -67,45 +66,49 @@ Use this notebook to interactively explore different aspects of the data and gen
 
 This project is built using:
 
-Python for core programming
-Pandas for data manipulation
-Matplotlib or Seaborn for data visualization
+Python for core programming  
+Pandas for data manipulation  
+Matplotlib or Seaborn for data visualization  
 Jupyter Notebook for interactive analysis
 
 ## Key Insights
 
 (Add your specific findings here after analysis — these examples are placeholders)
 
-* Magnitude distribution pattern: Most earthquakes in the dataset fall between magnitudes 2.5 and 5.0.
-* Temporal trend: There is a slight increase in recorded events over the last decade.
-* Geographic trends: Certain latitude and longitude clusters show recurrent seismic activity.
+- Magnitude distribution pattern: Most earthquakes in the dataset fall between magnitudes 2.5 and 5.0.
+- Temporal trend: There is a slight increase in recorded events over the last decade.
+- Geographic trends: Certain latitude and longitude clusters show recurrent seismic activity.
 
 Include visualizations (screenshots) under this section to enhance impact.
 
 ## How to Run This Project
 
 1. Clone the repository:
-
 ```
-git clone https://github.com/ridwandr/earthquake-data-analysis.git
+
+git clone [https://github.com/ridwandr/earthquake-data-analysis.git](https://github.com/ridwandr/earthquake-data-analysis.git)
+
 ```
 
 2. Install dependencies:
-
 ```
+
 pip install -r requirements.txt
+
 ```
 
 3. Run the ETL script:
-
 ```
+
 python etl/etl_main.py
+
 ```
 
 4. Launch the analysis notebook:
-
 ```
+
 jupyter notebook notebook/run.ipynb
+
 ```
 
 ## Notes
